@@ -44,7 +44,7 @@ const vitePressConfigs = {
 const vitePressSidebarOptions = {
     documentRootPath: "docs",
     collapsed: false,
-    collapseDepth: 1,
+    collapseDepth: 2,
     capitalizeFirst: true,
     useFolderLinkFromIndexFile: true,
     useTitleFromFrontmatter: true,
@@ -52,7 +52,6 @@ const vitePressSidebarOptions = {
     excludeByGlobPattern: ["assets/"],
     sortFolderTop: "top",
     sortMenusByFileDatePrefix: true,
-    // sortMenusOrderByDescending: true,
 };
 
 export default defineConfig(
