@@ -1,0 +1,47 @@
+name: Build & Deploy (VitePress -> DO, no releases)
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps & Build
+        run: |
+          npm ci
+          npm run docs:build
+
+      - name: Rsync to server (overwrite, delete old files)
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}      # e.g. 157.245.xx.xx
+          SSH_USER: ${{ secrets.SSH_USER }}      # e.g. root or deploy
+          SSH_KEY:  ${{ secrets.SSH_KEY }}       # private key text
+          SSH_PORT: ${{ secrets.SSH_PORT || 22 }}
+          REMOTE_DIR: ${{ secrets.REMOTE_DIR }}  # e.g. /opt/1panel/apps/openresty/openresty/www/sites/shinyypig.top/Homepage
+        run: |
+          set -euo pipefail
+          echo "$SSH_KEY" > key.pem
+          chmod 600 key.pem
+          # 确保目标目录存在
+          ssh -o StrictHostKeyChecking=no -i key.pem -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "mkdir -p '$REMOTE_DIR'"
+          # 同步并删除远端多余文件（= 直接清除旧版本）
+          rsync -azP --delete \
+            -e "ssh -i key.pem -p $SSH_PORT -o StrictHostKeyChecking=no" \
+            docs/.vitepress/dist/ "$SSH_USER@$SSH_HOST:$REMOTE_DIR/"
+
+          # 可选：触发 openresty 缓存刷新（若你需要）
+          # ssh -o StrictHostKeyChecking=no -i key.pem -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "sudo openresty -t && sudo systemctl reload openresty || true"
