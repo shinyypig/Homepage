@@ -55,7 +55,7 @@ jobs:
           # 同步并删除远端多余文件（= 直接清除旧版本）
           rsync -azPc --delete \
             -e "ssh -i key.pem -p $SSH_PORT -o StrictHostKeyChecking=no" \
-            docs/ "$SSH_USER@$SSH_HOST:$REMOTE_DIR/"
+            docs/.vitepress/dist/ "$SSH_USER@$SSH_HOST:$REMOTE_DIR/"
 
           # 可选：触发 openresty 缓存刷新（若你需要）
           # ssh -o StrictHostKeyChecking=no -i key.pem -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "sudo openresty -t && sudo systemctl reload openresty || true"
