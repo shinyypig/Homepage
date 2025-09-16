@@ -17,10 +17,10 @@ In this repository, I collect some TiKZ snippets that I use in my documents. You
 <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
   <div style="text-align: center;">
     <img src="./assets/2023-06-17-14-48-16.png" style="height: 200px; padding: 10px;" />
-    <a href="./snippets/draw-parallel-lines-using-TiKZ.md">parallel lines</a>
+    <a href="./snippets/draw-parallel-lines-using-TiKZ">parallel lines</a>
   </div>
   <div style="text-align: center;">
     <img src="./assets/2023-07-16-09-04-16.png" style="height: 200px; padding: 10px;" />
-    <a href="./snippets/draw-perpendicular-symbol.md">perpendicular symbol</a>
+    <a href="./snippets/draw-perpendicular-symbol">perpendicular symbol</a>
   </div>
 </div>
