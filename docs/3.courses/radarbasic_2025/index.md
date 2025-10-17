@@ -8,8 +8,11 @@ date: 2025-09-26
 ## 讲义
 
 -   [第 1 章：绪论](./lectures/第1章：绪论.pdf)
+-   [第 2 章：矩阵方法基础](./lectures/第2章：矩阵方法基础.pdf)
 
-## 补充阅读
+## 拓展阅读
+
+-   [最小二乘](./lectures/拓展阅读-最小二乘.pdf)
 
 ## 考核方式
 
@@ -26,6 +29,7 @@ date: 2025-09-26
     所有错误请统一提交至以下文档：
 
     -   第 1 章错误收集表： https://docs.qq.com/sheet/DVXFCWkZyQ2hSVWxn?tab=BB08J2
+    -   第 2 章错误收集表： https://docs.qq.com/sheet/DVXFCWkZyQ2hSVWxn?tab=205ex7
 
 -   期中考试：20%
 -   课程实验：20%
