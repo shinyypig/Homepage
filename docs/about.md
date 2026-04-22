@@ -22,6 +22,7 @@ order: 4
 
 ## Publications
 
+1. Geng Xiurui, and **Liangliang Zhu**. "Matrix formula for subpixel image registration." Pattern Recognition, vol. 172, Elsevier BV, 2026, p. 112469. ([link](https://www.sciencedirect.com/science/article/pii/S003132032501132X))
 1. 耿修瑞、**朱亮亮**. 矩阵之美（算法篇）. 科学出版社, 2024. ([link](https://book.douban.com/subject/37248125/))
 1. **Liangliang Zhu**, Xinwen Zhu, and Xiurui Geng. “Factorized Multi-Graph Matching.” Pattern Recognition, vol. 140, Elsevier BV, 2023, p. 109597. ([link](https://www.sciencedirect.com/science/article/abs/pii/S0031320323002984), [code](https://github.com/shinyypig/fmgm))
 1. **Liangliang Zhu**, and Xiurui Geng. “A New Translation Matching Method Based on Autocorrelated Normalized Cross-Power Spectrum.” IEEE Transactions on Geoscience and Remote Sensing, vol. 59, no. 8, IEEE, 2021, pp. 6956–68. ([link](https://ieeexplore.ieee.org/document/9239293/), [code](https://github.com/shinyypig/ancps))
